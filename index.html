@@ -19,9 +19,24 @@
       now = new Date(new Date().getFullYear(), 0, 1);
       // get current offset in hours from non-dst date
       var offset = now.getTimezoneOffset() / -60;
+      var dp = offset % 1;
+      var min = Math.round(dp * -60);
       // prepend offset
-      if (offset >= 0) {
-        offset = "+" + offset
+      if (min > 0 && min < 60) {
+        var prepend;
+        if (offset < 0) {
+          prepend = '-';
+        } else {
+          prepend = '+';
+        }
+        offset = prepend
+          + ("" + Math.abs(Math.trunc(offset))).padStart(2, "0")
+          + ":"
+          + ("" + min).padStart(2, "0");
+      } else if (offset >= 0) {
+        offset = "+" + Math.round(offset);
+      } else {
+        offset = Math.round(offset);
       }
       document.getElementById("offset").innerText = "UTC " + offset;
     </script>
