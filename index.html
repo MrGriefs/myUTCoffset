@@ -20,7 +20,7 @@
       // get current offset in hours from non-dst date
       var offset = now.getTimezoneOffset() / -60;
       var dp = offset % 1;
-      var min = Math.round(dp * -60);
+      var min = Math.round(Math.abs(dp) * 60);
       // prepend offset
       if (min > 0 && min < 60) {
         var prepend;
