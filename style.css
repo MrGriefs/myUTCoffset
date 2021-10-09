@@ -1,0 +1,28 @@
+html, body {
+  background-color: #222528;
+  height: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: aliceblue;
+  font-size: 5em;
+}
+
+#display {
+  font-size: 50%;
+}
+
+#offset {
+  font-size: 150%;
+  font-family: monospace;
+}
+
+p {
+  text-align: center;
+  margin: .05em;
+}

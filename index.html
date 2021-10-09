@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Your UTC Offset</title>
+    <meta name="description" content="Your UTC offset." />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <p id="display">Your UTC Offset</p>
+        <p id="offset">UTC</p>
+      </div>
+    </div>
+    <script>
+      now = new Date(new Date().getFullYear(), 0, 1);
+      // get current offset in hours from non-dst date
+      var offset = now.getTimezoneOffset() / -60;
+      // prepend offset
+      if (offset >= 0) {
+        offset = "+" + offset
+      }
+      document.getElementById("offset").innerText = "UTC " + offset;
+    </script>
+  </body>
+</html>
