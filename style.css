@@ -16,6 +16,8 @@ html, body {
 
 #display {
   font-size: 50%;
+  font-family: system-ui;
+  user-select: none;
 }
 
 #offset {
