@@ -17,7 +17,6 @@ html, body {
 #display {
   font-size: 50%;
   font-family: system-ui;
-  user-select: none;
 }
 
 #offset {
@@ -29,4 +28,8 @@ html, body {
 p {
   text-align: center;
   margin: .05em;
+}
+
+* {
+  user-select: none;
 }
